@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tabs</title>
+    <style>
+
+        .work{
+            background-color: #E9EDEF;;
+
+        }
+        .no-box{
+            display: none;
+        }
+        .filter-elements{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 85px;
+        }
+        .filter-element{
+            padding: 10px 30px;
+            border: 1px solid #DADADA;
+            font-size: 14px;
+            line-height: 42px;
+            color: #717171;
+        }
+
+        .block-cover{
+
+            margin: 85px auto;
+            width: 1140px;
+            display: flex;
+            flex-wrap:wrap;
+
+
+            /*display: grid;*/
+            /*grid-template-columns: repeat(4, 1fr);*/
+
+
+        }
+        .filter-active{
+            color: #18CFAB;
+            border-color:#18CFAB;
+        }
+
+
+        .hide {
+            display: none;
+            /*opacity: 1;*/
+            /*animation-name: a1;*/
+            /*animation-duration: 2s;*/
+            /*animation-fill-mode: forwards;*/
+        }
+        .work-button{
+            margin: 70px auto;
+            border-radius: 5px;
+            padding: 20px 10px;
+            background-color: #18CFAB;;
+            color: white;
+            width: 200px;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 42px;
+            /* identical to box height, or 300% */
+            display: flex;
+            justify-content: center;
+            text-transform: uppercase;
+
+        }
+
+        .work-button-text{
+            padding-left: 15px;
+        }
+        .pass{
+            padding-top: 100px;
+        }
+        .box{ height: 206px;
+
+            position: relative;
+
+        }
+        .box:hover .back {
+            display: flex;
+        }
+
+        .back {
+            display: none;
+            background-color: #E9EDEF;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 1s;
+            border-top: 3px solid #18CFAB;
+            /*backface-visibility: hidden;*/
+        }
+        .icon{
+            margin-bottom: 25px;
+        }
+        .card-back-title{
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 25px;
+            text-transform: uppercase;
+
+            color: #18CFAB;
+
+        }
+
+        .card-back-text{
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 25px;
+            color: #8A8A8A;}
+
+
+    </style>
+</head>
+
+<body>
+<section class="work">
+    <div>
+        <h2 class="tabs-title-heading">Our Amazing Work</h2>
+        <div class="double-lines"></div>
+    </div>
+    <nav class="nav">
+        <ul class="filter-elements">
+            <li class="filter-element filter-active" data-f="All">All</li>
+            <li data-f="Graphic_Design" class=" filter-element">Graphic Design</li>
+            <li data-f="Web-Design" class=" filter-element">Web Design</li>
+            <li data-f="Landing_Pages" class=" filter-element">Landing Pages</li>
+            <li data-f="Wordpress" class="filter-element">Wordpress</li>
+        </ul>
+    </nav>
+    <div class="block-cover">
+        <div class="col-auto box Graphic_Design">
+            <img src="../step%20project/img/Step%20Project%20Ham/graphic%20design/graphic-design1.jpg" alt="none">
+        </div>
+        <div class="col-auto box Graphic_Design">
+            <img src="../step%20project/img/Step%20Project%20Ham/graphic%20design/graphic-design2.jpg" alt="none">
+        </div>
+        <div class="col-auto box Graphic_Design">
+            <img src="../step%20project/img/Step%20Project%20Ham/graphic%20design/graphic-design3.jpg" alt="none">
+        </div>
+        <div class="col-auto box Graphic_Design">
+            <img src="../step%20project/img/Step%20Project%20Ham/graphic%20design/graphic-design4.jpg" alt="none">
+        </div>
+        <div class="col-auto box Graphic_Design">
+            <img src="../step%20project/img/Step%20Project%20Ham/graphic%20design/graphic-design5.jpg" alt="none">
+        </div>
+        <div class="col-auto box Graphic_Design">
+            <img src="../step%20project/img/Step%20Project%20Ham/graphic%20design/graphic-design6.jpg" alt="none">
+        </div>
+        <div class="col-auto box Graphic_Design">
+            <img src="../step%20project/img/Step%20Project%20Ham/graphic%20design/graphic-design7.jpg" alt="none">
+        </div>
+        <div class="col-auto box Graphic_Design">
+            <img src="../step%20project/img/Step%20Project%20Ham/graphic%20design/graphic-design8.jpg" alt="none">
+        </div>
+        <div class="col-auto box Graphic_Design">
+            <img src="../step%20project/img/Step%20Project%20Ham/graphic%20design/graphic-design9.jpg" alt="none">
+        </div>
+        <div class="col-auto box Graphic_Design">
+            <img src="../step%20project/img/Step%20Project%20Ham/graphic%20design/graphic-design10.jpg" alt="none">
+        </div>
+        <div class="col-auto box Graphic_Design">
+            <img src="../step%20project/img/Step%20Project%20Ham/graphic%20design/graphic-design11.jpg" alt="none">
+        </div>
+        <div class="col-auto box Graphic_Design">
+            <img src="../step%20project/img/Step%20Project%20Ham/graphic%20design/graphic-design12.jpg" alt="none">
+        </div>
+
+        <div class="col-auto box Web-Design ">
+            <img src="../step%20project/img/Step%20Project%20Ham/web%20design/web-design1.jpg" alt="none">
+        </div>
+        <div class="col-auto box Web-Design ">
+            <img src="../step%20project/img/Step%20Project%20Ham/web%20design/web-design2.jpg" alt="none">
+        </div>
+        <div class="col-auto box Web-Design ">
+            <img src="../step%20project/img/Step%20Project%20Ham/web%20design/web-design3.jpg" alt="none">
+        </div>
+        <div class="col-auto box Web-Design ">
+            <img src="../step%20project/img/Step%20Project%20Ham/web%20design/web-design4.jpg" alt="none">
+        </div>
+        <div class="col-auto box Web-Design ">
+            <img src="../step%20project/img/Step%20Project%20Ham/web%20design/web-design5.jpg" alt="none">
+        </div>
+        <div class="col-auto box Web-Design ">
+            <img src="../step%20project/img/Step%20Project%20Ham/web%20design/web-design6.jpg" alt="none">
+        </div>
+        <div class="col-auto box Web-Design ">
+            <img src="../step%20project/img/Step%20Project%20Ham/web%20design/web-design7.jpg" alt="none">
+        </div>
+        <div class="col-auto box Landing_Pages ">
+            <img src="../step%20project/img/Step%20Project%20Ham/landing%20page/landing-page1.jpg" alt="none">
+        </div>
+        <div class="col-auto box Landing_Pages ">
+            <img src="../step%20project/img/Step%20Project%20Ham/landing%20page/landing-page2.jpg" alt="none">
+        </div>
+        <div class="col-auto box Landing_Pages ">
+            <img src="../step%20project/img/Step%20Project%20Ham/landing%20page/landing-page3.jpg" alt="none">
+        </div>
+        <div class="col-auto box Landing_Pages ">
+            <img src="../step%20project/img/Step%20Project%20Ham/landing%20page/landing-page4.jpg" alt="none">
+        </div>
+        <div class="col-auto box Landing_Pages ">
+            <img src="../step%20project/img/Step%20Project%20Ham/landing%20page/landing-page5.jpg" alt="none">
+        </div>
+        <div class="col-auto box Landing_Pages ">
+            <img src="../step%20project/img/Step%20Project%20Ham/landing%20page/landing-page6.jpg" alt="none">
+        </div>
+        <div class="col-auto box Landing_Pages ">
+            <img src="../step%20project/img/Step%20Project%20Ham/landing%20page/landing-page7.jpg" alt="none">
+        </div>
+        <div class="col-auto box Wordpress ">
+            <img src="../step%20project/img/Step%20Project%20Ham/wordpress/wordpress1.jpg" alt="none">
+        </div>
+        <div class="col-auto box Wordpress ">
+            <img src="../step%20project/img/Step%20Project%20Ham/wordpress/wordpress2.jpg" alt="none">
+        </div>
+        <div class="col-auto box Wordpress ">
+            <img src="../step%20project/img/Step%20Project%20Ham/wordpress/wordpress3.jpg" alt="none">
+        </div>
+        <div class="col-auto box Wordpress ">
+            <img src="../step%20project/img/Step%20Project%20Ham/wordpress/wordpress4.jpg" alt="none">
+        </div>
+        <div class="col-auto box Wordpress">
+            <img src="../step%20project/img/Step%20Project%20Ham/wordpress/wordpress5.jpg" alt="none">
+        </div>
+        <div class="col-auto box Wordpress ">
+            <img src="../step%20project/img/Step%20Project%20Ham/wordpress/wordpress6.jpg" alt="none">
+        </div>
+        <div class="col-auto box Wordpress ">
+            <img src="../step%20project/img/Step%20Project%20Ham/wordpress/wordpress7.jpg" alt="none">
+        </div>
+        <div class="col-auto box Wordpress">
+            <img src="../step%20project/img/Step%20Project%20Ham/wordpress/wordpress8.jpg" alt="none">
+        </div>
+        <div class="col-auto box Wordpress ">
+            <img src="../step%20project/img/Step%20Project%20Ham/wordpress/wordpress9.jpg" alt="none">
+        </div>
+        <div class="col-auto box Wordpress ">
+            <img src="../step%20project/img/Step%20Project%20Ham/wordpress/wordpress10.jpg" alt="none">
+        </div>
+    </div>
+    <div id="work-block-button" class="load-img work-button"><span>+</span><p class="work-button-text">load more</p></div>
+
+    <div class="pass"></div>
+</section>
+
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/test.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tabs</title>
+    <style>
+        .work-block{
+            background-color: #f8fcfe;
+            padding: 97px 0 97px 0;
+            border-bottom: 1px solid #e1e1e1;
+        }
+        .work-block>.container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .container>.label-section{
+            margin-bottom: 25px;
+        }
+        .container>.double-lines{
+            margin-bottom: 57px;
+        }
+        .work-block-items{
+            border: 1px solid #ebebeb;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 70px;
+        }
+        .work-block-link:not(:first-child){
+            border-left-color: #ebebeb;
+        }
+        .work-block-link{
+            display: inline-block;
+            padding:  25px;
+            box-sizing: border-box;
+            font-size: 16px;
+            font-weight: 500;
+            color: #717171;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+        .work-block-link:hover{
+            box-shadow: 0 -2px 0 0 #18cfab;
+        }
+        .work-block-link-check{
+            box-shadow: 0 -2px 0 0 #18cfab;
+            color: #18cfab;
+        }
+        .uploading-pictures{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            justify-content: center;
+            margin-bottom: 67px;
+        }
+        .card{
+            width: 286px;
+            height: 206px;
+            position: relative;
+            perspective: 1000px;
+        }
+        .front, .back{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s;
+            backface-visibility: hidden;
+        }
+        .back {
+            background-color: #f8fcfe;
+            transform: rotateY(180deg);
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: 85px 45px 1fr;
+            grid-template-areas:
+            "fa-link fa-search"
+            "card-back-title card-back-title"
+            "card-back-text card-back-text";
+            justify-content: center;
+            justify-items: center;
+            align-content: center;
+            grid-column-gap: 5px;
+            box-sizing: border-box;
+            border-top: 2px solid #18cfab;
+        }
+
+        .back>.fa-link{
+            grid-area: fa-link;
+            justify-self: end;
+        }
+        .back>.fa-search{
+            grid-area: fa-search;
+            justify-self: start;
+        }
+        .back>.fa-link, .back>.fa-search{
+            width: 37px;
+            height: 37px;
+            border: 1px solid #18cfab;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #18cfab;
+        }
+        .back>.fa-link:hover, .back>.fa-search:hover{
+            background: #18cfab;
+            color: white;
+        }
+        .card-back-title{
+            grid-area: card-back-title;
+            align-self: end;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #18cfab;
+        }
+        .card-back-text{
+            grid-area: card-back-text;
+            align-self: start;
+            font-size: 12px;
+            font-weight: lighter;
+            color: #80828a;
+        }
+        .card:hover .front {
+            transform: rotateY(180deg);
+        }
+        .card:hover .back {
+            transform: rotateY(360deg);
+        }
+        .work-block-button{
+            margin-bottom: 60px ;
+        }
+        .load-img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius:10px ;
+            border: 1px solid transparent;
+            padding: 15px 20px;
+            background-color: #18cfab;
+            color: white;
+            text-transform: uppercase;
+            transition: color, border-top-color, background-color 0.5s;
+            cursor: pointer;
+            width: 170px;
+            margin: 0 auto;
+        }
+        .load-img > span{
+            font-size: 30px;
+            margin-right: 16px;
+        }
+
+        /**/
+        .container-load{
+            display: none;
+            position: relative;
+        }
+        .container-load{
+            width:200px;
+            height:200px;
+            margin: 0 auto;
+        }
+
+        .container-load div{
+            width:100px;
+            height:100px;
+            top:50px;
+            left:50px;
+            display:block;
+            position: absolute;
+        }
+
+        .top-left{
+            animation:tl 7.5s ease infinite
+        }
+        .top-right{
+            animation:tr 7.5s ease infinite
+        }
+        .bottom-left{
+            animation:bl 7.5s ease infinite
+        }
+        .bottom-right{
+            animation:br 7.5s ease infinite
+        }
+
+        .container-load div:before, .container-load div:after
+        {
+            display:block;position:absolute;content:""
+        }
+
+        .container-load div:before{
+            width:50px;height:50px
+        }
+
+        .top-left:before{
+            background:#1c2a33;
+            top:0;
+            left:0;
+            border-radius:100% 0 0 0
+        }
+
+        .top-right:before{
+            background:#18cfab;
+            top:0;
+            right:0;
+            border-radius:0 100% 0 0
+        }
+
+        .bottom-left:before{
+            background:#18cfab;
+            bottom:0;
+            left:0;
+            border-radius:0 0 0 100%
+        }
+
+        .bottom-right:before{
+            background:#1c2a33;
+            bottom:0;
+            right:0;
+            border-radius:0 0 100% 0
+        }
+
+        .container-load div:after{
+            background: #f8fcfe;
+            width:25px;
+            height:25px;
+            z-index:1
+        }
+
+        .top-left:after
+        {top:25px;left:25px;border-radius:100% 0 0 0}
+
+        .top-right:after
+        {top:25px;right:25px;border-radius:0 100% 0 0}
+
+        .bottom-left:after
+        {bottom:25px;left:25px;border-radius:0 0 0 100%}
+
+        .bottom-right:after
+        {bottom:25px;right:25px;border-radius:0 0 100% 0}
+
+        @keyframes tl{
+            0%,96%,100%{transform:rotate(0deg)}
+            12%{transform:rotate(-45deg)}
+            24%{transform:rotate(-90deg)}
+            36%{transform:rotate(-135deg)}
+            48%{left:50px;transform:rotate(-180deg)}
+            60%{left:125px;opacity:1;transform:rotate(-135deg)}
+            61%,95%{opacity:0}
+        }
+
+        @keyframes tr{
+            0%{transform:rotate(0deg)}
+            12%{transform:rotate(-45deg)}
+            24%{transform:rotate(-90deg)}
+            36%{transform:rotate(-135deg)}
+            48%{transform:rotate(-180deg)}
+            60%{transform:rotate(-225deg)}
+            72%{transform:rotate(-270deg)}
+            84%{transform:rotate(-315deg)}
+            96%,100%{transform:rotate(-360deg)}
+        }
+
+        @keyframes bl{
+            0%,100%{transform:rotate(0deg)}
+            12%{transform:rotate(-45deg)}
+            24%{left:50px;transform:rotate(-90deg)}
+            36%{left:125px;opacity:1;transform:rotate(-45deg)}
+            37%,83%{opacity:0}
+            84%{left:-25px;opacity:1;transform:rotate(-45deg)}
+            96%{left:50px;transform:rotate(0deg)}
+        }
+
+        @keyframes br{
+            0%,96%,100%{transform:rotate(0deg)}
+            12%{left:125px;opacity:1;transform:rotate(45deg)}
+            13%,59%{opacity:0}
+            60%{left:-25px;opacity:1;transform:rotate(45deg)}
+            72%{left:50px;transform:rotate(90deg)}
+            84%{transform:rotate(45deg)}
+        }
+    </style>
+</head>
+
+<body>
+<section data-item-information="4" class="work-block">
+    <div class="container">
+
+        <div id="work-block-items"class="work-block-items">
+            <a href="#" data-number="0" class="work-block-link work-block-link-check">All</a>
+            <a href="#" data-number="1" class="work-block-link">Graphic Design</a>
+            <a href="#" data-number="2" class="work-block-link">Web Design</a>
+            <a href="#" data-number="3" class="work-block-link">Landing Pages</a>
+            <a href="#" data-number="4" class="work-block-link">Wordpress</a>
+        </div>
+        <!--div в кторый будут загружаться картинки-->
+        <div id="uploading-pictures" class="uploading-pictures"></div>
+
+        <div class="container-load">
+            <div class="top-left"></div>
+            <div class="top-right"></div>
+            <div class="bottom-left"></div>
+            <div class="bottom-right"></div>
+        </div>
+        <div id="work-block-button" class="load-img work-block-button"><span>+</span><p>load more</p></div>
+    </div>
+</section>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/test.js"></script>
+</body>
+
+</html>

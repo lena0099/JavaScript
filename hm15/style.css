@@ -1,0 +1,109 @@
+
+.hot-list{
+
+    display: grid;
+    width: 1168px;
+    grid-template-columns: repeat(4,262px);
+    grid-template-rows: 259px repeat(2, 450px) 259px;
+    grid-row-gap:43px ;
+    justify-content: space-between;
+    margin: 0 auto;
+    text-align: right;
+    /*grid-template-areas:*/
+    /* "item1 item1 item1 item2 "*/
+    /*"item3 item3 item4 item4"*/
+    /* "item5 item5 item6 item6"*/
+    /* "item7 item8 item8 item8"*/
+}
+.hot-list-element{
+    background-color: #F9F7F7;
+}
+.hot-list-element:nth-child(1)
+{
+    grid-column: 1/4;
+    display: flex;
+}
+
+.hot-list-element:nth-child(2){
+    grid-column: 4/5;
+}
+.hot-list-element:nth-child(3){
+    grid-column:1/3 ;
+}
+.hot-list-element:nth-child(4){
+    grid-column:3/5 ;
+}
+.hot-list-element:nth-child(5){
+    grid-column:1/3 ;
+}
+.hot-list-element:nth-child(6){
+    grid-column:3/5 ;
+}
+.hot-list-element:nth-child(7){
+    grid-column: 1/2;
+}
+.hot-list-element:last-child{
+    display: flex;
+    grid-column: 2/5;
+}
+.hot-title{
+    background-color: #F9F7F7;
+    padding: 15px 40px;
+    display: block;
+    color: #353A3D;
+    font-size: 18px;
+    line-height:25px;
+
+}
+.hot-text{
+    font-size: 14px;
+    color: #5B6469;
+    padding-top: 15px;
+    line-height:21px;
+    margin-left: 20px;
+    padding-right: 10px;
+}
+.hot-list-element-img{
+    width: 100%;
+}
+.footer{
+    margin-top: 80px;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    justify-content: center;
+
+}
+.comment{
+    color: white;
+    padding: 30px 367px;
+    font-size: 13px;
+}
+
+.logo-footer-img2{
+    padding-top: 30px;
+    width: 64px;
+    height: 16px;
+}
+.logo-footer-img{
+    width: 38px;
+    height: 24px;
+}
+
+/*#scrollToTop{*/
+/*    padding: 10px 10px 10px 10px;*/
+/*    background-color: gray;*/
+/*    color: white;*/
+/*    font-size: 20px;*/
+/*    border-radius: 50%;*/
+/*    position: fixed;*/
+
+/*    left: 95%;*/
+/*    top: 80%;*/
+
+/*    !*justify-content: center;*!*/
+/*    !*align-items: center;*!*/
+/*    !*text-align: center;*!*/
+/*    !*font-weight: bold;*!*/
+
+/*}*/
